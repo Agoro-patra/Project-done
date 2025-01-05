@@ -3,7 +3,7 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   searchCity(searchInputElement.value);
 
-  console.log(response.data.condition.description);
+  console.log(response.data);
 }
 function searchCity(city) {
   let apiKey = "b2a5adcct04b33178913oc335f405433";
@@ -17,9 +17,11 @@ function displayTemperature(response) {
   temperatureElement.innerHTML = temperature;
 
   let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
   let cityElement = document.querySelector("#current-city");
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 }
 
 let searchForm = document.querySelector("#search-form");
