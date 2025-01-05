@@ -2,8 +2,6 @@ function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
   searchCity(searchInputElement.value);
-
-  console.log(response.data);
 }
 
 function displayTemperature(response) {
